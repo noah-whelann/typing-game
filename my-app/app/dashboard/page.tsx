@@ -1,14 +1,14 @@
-import Header from '../components/Header'
-import React from 'react'
+import Header from "../components/Header";
+import React from "react";
 
 const Dashboard = () => {
   return (
-    <div className="h-screen bg-background: #F1F6F9;
-">
-        <Header />
-        Hello
+    <div
+      className="h-screen bg-neutral"
+    >
+      <Header />
     </div>
-  )
-}
+  );
+};
 
-export default Dashboard
+export default Dashboard;
