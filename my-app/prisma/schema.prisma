@@ -20,11 +20,11 @@ model User {
 }
 
 model Game {
-  id        Int      @id @default(autoincrement())
-  date      DateTime @default(now())
-  wpm       Float // WPM
-  accuracy  Float
-  duraction Int
-  UserId    Int
-  user      User     @relation(fields: [UserId], references: [id])
+  id       Int      @id @default(autoincrement())
+  date     DateTime @default(now())
+  wpm      Float // WPM
+  accuracy Float
+  duration Int
+  UserId   Int
+  user     User     @relation(fields: [UserId], references: [id])
 }
