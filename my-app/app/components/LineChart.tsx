@@ -1,7 +1,12 @@
-// components/LineChart.js
-import React from "react";
-import { Line } from "react-chartjs-2";
-function LineChart({ chartData }) {
+// components/LineChart.tsx
+import React, { FC } from "react";
+import { Line, ChartData } from "react-chartjs-2";
+
+interface LineChartProps {
+  chartData: ChartData;
+}
+
+const LineChart: FC<LineChartProps> = ({ chartData }) => {
   return (
     <div className="chart-container">
       <h2 style={{ textAlign: "center" }}>Line Chart</h2>
@@ -11,7 +16,7 @@ function LineChart({ chartData }) {
           plugins: {
             title: {
               display: true,
-              text: "Game number"
+              text: "WPM over time"
             },
             legend: {
               display: false
@@ -21,5 +26,6 @@ function LineChart({ chartData }) {
       />
     </div>
   );
-}
+};
+
 export default LineChart;
