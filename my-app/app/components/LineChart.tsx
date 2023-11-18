@@ -1,9 +1,10 @@
 // components/LineChart.tsx
 import React, { FC } from "react";
-import { Line, ChartData } from "chart.js";
+import { Line } from "react-chartjs-2";
+import { ChartData, ChartOptions } from "chart.js";
 
 interface LineChartProps {
-  chartData: ChartData;
+  chartData: ChartData<"line", any>;
 }
 
 const LineChart: FC<LineChartProps> = ({ chartData }) => {
@@ -16,13 +17,13 @@ const LineChart: FC<LineChartProps> = ({ chartData }) => {
           plugins: {
             title: {
               display: true,
-              text: "WPM over time"
+              text: "WPM over time",
             },
             legend: {
-              display: false
-            }
-          }
-        }}
+              display: false,
+            },
+          },
+        } as ChartOptions}
       />
     </div>
   );
