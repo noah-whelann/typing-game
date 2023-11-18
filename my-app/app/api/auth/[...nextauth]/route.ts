@@ -26,6 +26,7 @@ export const authOptions: AuthOptions = {
         if (!credentials) {
           return null;
         }
+
         const { email, password } = credentials;
 
         const user = await prisma.user.findUnique({
@@ -45,6 +46,7 @@ export const authOptions: AuthOptions = {
         if (!isValidPassword) {
           return null;
         }
+
         return user;
       },
     }),
@@ -55,7 +57,6 @@ export const authOptions: AuthOptions = {
   },
   secret: process.env.NEXTAUTH_SECRET,
   jwt: {
-    //one function to encode the jwt and the other one to decode it
     async encode({ secret, token }) {
       if (!token) {
         throw new Error("No token to encode");
@@ -76,27 +77,28 @@ export const authOptions: AuthOptions = {
   },
   session: {
     strategy: "jwt",
-    maxAge: 30 * 24 * 60 * 60, // 30 days
-    updateAge: 24 * 60 * 60, // 24 hours
+    maxAge: 30 * 24 * 60 * 60,
+    updateAge: 24 * 60 * 60,
   },
   callbacks: {
     async session(params: { session: Session; token: JWT; user: User }) {
       if (params.session.user) {
-        // if the user has been set on the session -- if the user is valid
         params.session.user.email = params.token.email;
       }
+
       return params.session;
     },
     async jwt(params: {
       token: JWT;
       user?: User | undefined;
-      acccount?: Account | null | undefined;
+      account?: Account | null | undefined;
       profile?: Profile | undefined;
       isNewUser?: boolean | undefined;
     }) {
       if (params.user) {
         params.token.email = params.user.email;
       }
+
       return params.token;
     },
   },
