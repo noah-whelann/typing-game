@@ -1,6 +1,6 @@
 // utils/prismaUtils.ts
 
-import { PrismaClient } from '@prisma/client';
+import { PrismaClient } from "@prisma/client";
 
 const prisma = new PrismaClient();
 
@@ -9,7 +9,7 @@ interface GameData {
   wpm: number;
   accuracy: number;
   duration: number;
-  date: Date
+  date: Date;
 }
 
 const createGame = async (data: GameData) => {
@@ -19,7 +19,7 @@ const createGame = async (data: GameData) => {
       wpm: data.wpm,
       accuracy: data.accuracy,
       duration: data.duration,
-      date: data.date
+      date: data.date,
     },
   });
 };

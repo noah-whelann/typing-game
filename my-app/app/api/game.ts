@@ -1,7 +1,6 @@
-// app/api/game.ts
 
 import type { NextApiRequest, NextApiResponse } from 'next';
-import { createGame, getUserStats, cleanup } from '../utils/prismaUtils';
+import { createGame, getUserStats, cleanup } from '@/app/actions/createGame/createGame';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === 'POST') {

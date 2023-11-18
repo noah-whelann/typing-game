@@ -1,6 +1,6 @@
 // components/LineChart.tsx
 import React, { FC } from "react";
-import { Line, ChartData } from "react-chartjs-2";
+import { Line, ChartData } from "chart.js";
 
 interface LineChartProps {
   chartData: ChartData;

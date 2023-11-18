@@ -16,7 +16,7 @@ const Header = async () => {
         <Image src={logo} alt="logo" />
       </div>
       <div className="flex items-center mx-20">
-        
+
         <p className="mx-3">{session?.user?.name}</p>
 
         <div className="dropdown">
