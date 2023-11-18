@@ -5,7 +5,7 @@ import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
 interface GameData {
-  userId: number;
+  userId: string;
   wpm: number;
   accuracy: number;
   duration: number;
@@ -24,13 +24,13 @@ const createGame = async (data: GameData) => {
   });
 };
 
-const getUserStats = async (userId: number) => {
+const getUserStats = async (userId: string) => {
   return prisma.user.findUnique({
     where: {
       id: userId,
     },
     include: {
-      Game: true,
+      games: true,
     },
   });
 };

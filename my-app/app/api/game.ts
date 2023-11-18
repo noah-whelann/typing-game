@@ -12,6 +12,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
       // Send a success response with the saved data
       res.status(201).json({ success: true, data: savedGameData });
+
     } catch (error) {
       // Handle errors and send an error response
       console.error('Error saving game data:', error);
@@ -20,8 +21,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       // Use the cleanup function from prismaUtils
       await cleanup();
     }
-  } else {
+  } else if (req.method === 'GET') {
     // Handle any other HTTP method
-    res.status(405).json({ success: false, error: 'Method Not Allowed' });
+    // res.status(405).json({ success: false, getUserStats:});
   }
 }
