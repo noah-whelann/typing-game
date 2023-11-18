@@ -1,13 +1,15 @@
-import React from 'react';
-import SignInForm from './_components/SignInForm';
+import SignInForm from '@/app/components/SignInForm'
+import React from 'react'
 
-const SignIn = () => {
-    return (
-        <div>
-            <h1>Sign In</h1>
-            <SignInForm />
-        </div>
-    );
-};
+const SignInPage = () => {
+  return (
+    <div className='flex flex-col gap-4'>
+        <h1 className='text-3xl'>
+            Sign In
+        </h1>
+        <SignInForm />
+    </div>
+  )
+}
 
-export default SignIn;
+export default SignInPage

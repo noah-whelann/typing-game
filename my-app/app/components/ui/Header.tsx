@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import logo from "../assets/logo.png";
+import logo from "@/app/assets/logo.png"
 import { CgProfile } from "react-icons/cg";
 import Link from "next/link";
 
