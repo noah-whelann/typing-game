@@ -1,38 +1,42 @@
 import React from "react";
 import Image from "next/image";
 import logo from "@/app/assets/logo.png"
-import { CgProfile } from "react-icons/cg";
+import { PersonRounded } from '@mui/icons-material';
 import Link from "next/link";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import "./Header.css"
 
 const Header = async () => {
 
   const session = await getServerSession(authOptions);
 
   return (
-    <div className="flex justify-between items-center max-w-screen">
-      <div className="w-20 m-10">
+    <div className="header">
+      <div className="logo">
         <Image src={logo} alt="logo" />
       </div>
-      <div className="flex items-center mx-20">
-
-        <p className="mx-3">{session?.user?.name}</p>
-
+      <div className="user">
         <div className="dropdown">
-          <CgProfile tabIndex={0} className="cursor-pointer" />
-          <ul
+        <p id="username">{session?.user?.name}</p>
+          <PersonRounded tabIndex={0} className="cursor-pointer" id="userIcon"/>
+          <ul id="dropdownbox"
             tabIndex={0}
             className="dropdown-content z-[1] menu p-2 shadow-md bg-secondary rounded-box w-52 -left-20"
           >
             <li>
               <Link className="justify-center" href="/stats">
-                Stats
+                stats
               </Link>
             </li>
             <li>
               <Link className="justify-center" href="/user_settings">
-                Settings
+                settings
+              </Link>
+            </li>
+            <li>
+              <Link className="justify-center" href="/auth/signout">
+                sign out
               </Link>
             </li>
           </ul>

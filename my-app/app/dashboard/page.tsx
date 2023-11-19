@@ -1,5 +1,8 @@
 import GameBar from "../components/ui/GameBar";
 import Header from "../components/ui/Header";
+import MainText from "../components/ui/MainText";
+import Data from "../components/ui/Data";
+import Footer from "../components/ui/Footer"
 import React from "react";
 
 const Dashboard = () => {
@@ -9,6 +12,9 @@ const Dashboard = () => {
     >
       <Header />
       <GameBar />
+      <MainText />
+      <Data />
+      <Footer />
     </div>
   );
 };

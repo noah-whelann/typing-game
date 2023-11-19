@@ -1,0 +1,27 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    width: 130px;
+    margin-left: 60px;
+    margin-top: 20px;
+}
+#username {
+    font-size: 14px;
+    color: #F1F6F9;
+    font-family: "Roboto Mono", monospace;
+}
+#userIcon {
+    width: 50px;
+    color: #F1F6F9;
+    margin-top: 15px;
+    margin-right: 70px;
+}
+#dropdownbox {
+    width: 150px;
+    margin-top: 10px;
+    font-family: "Roboto Mono", monospace;
+}

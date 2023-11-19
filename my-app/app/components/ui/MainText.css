@@ -1,0 +1,16 @@
+.textdisplay {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 130px;
+}
+#maintext {
+    color: #9BA4B5;
+    font-family: "Roboto Mono", monospace;
+    font-size: 30px;
+}
+#sound {
+    margin-top: 10px;
+    color: #F1F6F9;
+}
