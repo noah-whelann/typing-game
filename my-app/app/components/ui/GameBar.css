@@ -15,6 +15,7 @@
     color: #394867;
     border-radius: 23px;
     max-width: 768px;
+    box-shadow: 1px 1px 1em 1px rgba(241, 246, 249, 0.5);
 }
 #timeselection {
     font-size: 16px;

@@ -4,12 +4,16 @@ import MainText from "../components/ui/MainText";
 import Data from "../components/ui/Data";
 import Footer from "../components/ui/Footer"
 import React from "react";
+import Head from 'next/head'
 
 const Dashboard = () => {
   return (
     <div
       className="h-screen bg-primary"
     >
+      <Head>
+        <title>TypED</title>
+      </Head>
       <Header />
       <GameBar />
       <MainText />
