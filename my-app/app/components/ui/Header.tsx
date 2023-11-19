@@ -19,7 +19,7 @@ const Header = async () => {
       <div className="user">
         <div className="dropdown">
         <p id="username">{session?.user?.name}</p>
-          <PersonRounded tabIndex={0} className="cursor-pointer" id="userIcon"/>
+          <PersonRounded tabIndex={0} className="cursor-pointer" id="userIcon" sx={{ fontSize: 40 }}/>
           <ul id="dropdownbox"
             tabIndex={0}
             className="dropdown-content z-[1] menu p-2 shadow-md bg-secondary rounded-box w-52 -left-20"
