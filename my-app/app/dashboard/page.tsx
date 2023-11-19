@@ -5,7 +5,7 @@ import React from "react";
 const Dashboard = () => {
   return (
     <div
-      className="h-screen bg-neutral"
+      className="h-screen bg-primary"
     >
       <Header />
       <GameBar />

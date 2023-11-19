@@ -8,7 +8,21 @@ const config: Config = {
   ],
   plugins: [require("daisyui")],
   daisyui: {
-    themes: ["nord"],
+    themes: [
+      {
+        mytheme: {
+          "primary": "#212A3E",
+          "secondary": "#F1F6F9",      
+          "accent": "#394867",      
+          "neutral": "#9BA4B5",      
+          "base-100": "#ffffff",     
+          "info": "#ffffff",
+          "success": "#ffffff",       
+          "warning": "#ffffff",      
+          "error": "#ffffff",
+        },
+      },
+    ],
   },
 }
 export default config
