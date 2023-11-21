@@ -10,10 +10,17 @@
     font-family: "Roboto Mono", monospace;
     font-size: 30px;
 }
-#wordinpu1t {
-    display:none;
-    visibility:hidden;
+#wordinput {
+    color:transparent;
+    background-color:transparent;
+    caret-color: transparent;
+    border-style:none;
+    outline:none;
+    user-select:none;
 }
+#wordinput::selection {
+    background-color: transparent;
+  }
 #sound {
     margin-top: 10px;
     color: #F1F6F9;
