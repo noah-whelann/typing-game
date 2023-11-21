@@ -10,6 +10,10 @@
     font-family: "Roboto Mono", monospace;
     font-size: 30px;
 }
+#wordinpu1t {
+    display:none;
+    visibility:hidden;
+}
 #sound {
     margin-top: 10px;
     color: #F1F6F9;
