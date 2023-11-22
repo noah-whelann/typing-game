@@ -10,6 +10,12 @@
     font-family: "Roboto Mono", monospace;
     font-size: 30px;
 }
+#correcttext {
+    color:#F1F6F9;
+}
+#incorrecttext {
+    color:rgb(255, 78, 113);
+}
 #wordinput {
     color:transparent;
     background-color:transparent;
@@ -20,7 +26,7 @@
 }
 #wordinput::selection {
     background-color: transparent;
-  }
+}
 #sound {
     margin-top: 10px;
     color: #F1F6F9;
