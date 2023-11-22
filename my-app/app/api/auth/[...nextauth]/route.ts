@@ -6,7 +6,6 @@ import jwt from "jsonwebtoken";
 import { JWT } from "next-auth/jwt";
 import NextAuth from "next-auth/next";
 
-
 export const authOptions: AuthOptions = {
   providers: [
     CredentialsProvider({
@@ -82,26 +81,25 @@ export const authOptions: AuthOptions = {
     updateAge: 24 * 60 * 60,
   },
   callbacks: {
-    async session(params: { session: Session; token: JWT; }) {
-      if (params.session.user) {
-        params.session.user.email = params.token.email;
-        (params.session.user as any).id = params.token.id;
-      }
-      return params.session;
-    },
     async jwt(params: {
       token: JWT;
       user?: User | undefined;
+      id?: string | undefined;
       account?: Account | null | undefined;
       profile?: Profile | undefined;
       isNewUser?: boolean | undefined;
     }) {
       if (params.user) {
         params.token.email = params.user.email;
-        params.token.id = params.user.id;
+        params.token.id = params.user.id as string;
       }
-
       return params.token;
+    },
+    async session(params: { session: Session; token: JWT }) {
+      if (params.session.user) {
+        params.session.user = params.token as any;
+      } 
+      return params.session;
     },
   },
 };
