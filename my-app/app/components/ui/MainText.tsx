@@ -1,13 +1,13 @@
 "use client"
 import "./MainText.css"
 import {VolumeUpRounded} from '@mui/icons-material';
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const MainText = () => {
     /* Logic Implementation required here */
-    let [wordsList, setWordsList] = useState('replace this with api call for random word')
-    let [word, setWord] = useState('Random word')
-    let [text, setText] = useState('')
+    let [wordsList, setWordsList] = useState(['demonstration', 'list', 'of', 'words']);
+    let [word, setWord] = useState('loading...');
+    let [text, setText] = useState('');
 
     function textFocus() {
         /* Used to detect focus and stuff, can be changed */
@@ -22,15 +22,37 @@ const MainText = () => {
         setText(input.value);
     }
 
-    function renderText() {
+    function nextWord() {
+        /* Function call assumes text field is empty */
+
+        if (wordsList.length <= 0) {
+            setWord("Typing challenge complete!");
+        } else {
+            setWord(wordsList[0]);
+            setWordsList(wordsList.slice(1));
+        }
+    }
+
+    function Text() {
         let chars = Array.from(word);
         let typed = Array.from(text);
         let render = [];
 
+        if (chars.every((c, i) => c === typed[i])) {
+            let input = document.getElementById("wordinput") as HTMLInputElement;
+            input.value = "";
+            updateText();
+            nextWord();
+            chars = Array.from(word);
+            typed = [];
+        }
+
+        console.log(chars, typed);
+
         for (let i = 0; i < Math.max(chars.length, typed.length); i++) {
-            
+
             /* 
-            pushes tuples to render array of form {id, char, status}
+            pushes tuples to render char array of form {id, char, status}
             status = 0: untyped
             status = 1: typed, correct
             status = 2: typed, incorrect
@@ -46,33 +68,42 @@ const MainText = () => {
                 render.push({id: i, char: chars.at(i), status: 1});
             }
         }
-        
-        console.log(chars);
-        console.log(typed);
-        console.log(render);
 
         return (
             render.map((c) => <span key={c.id} id={c.status == 0 ? 'untypedtext' : (c.status == 1 ? 'correcttext' : 'incorrecttext')}>{c.char}</span>)
         )
     }
-
-    renderText();
+    
+    useEffect(() => {
+        fetch('https://random-word-api.herokuapp.com/word?number=10')
+            .then(response => response.json())
+            .then(data => {
+                setWordsList(data);
+                console.log(data);
+            })
+            .then(nextWord)
+            .then(() => {
+                console.log("words loaded");
+                console.log(wordsList);
+            });
+    }, []);
 
     return (
         <div className="textdisplay">
             <div id="maintext" onClick={ textFocus }>
-                { renderText() }
+                { Text() }
             </div>
+            <p>{text}</p>
             <input id="wordinput" 
                 autoFocus 
-                autoComplete="false" 
+                autoComplete="off" 
                 onInput={ updateText } 
                 autoCapitalize="off" 
                 autoCorrect="off" 
                 data-gramm="false" 
                 data-gramm_editor="false" 
                 data-enable-grammarly="false" 
-                list="autocompleteOff" 
+                list="autocompleteOff"
                 spellCheck="false"/>
             <button>
                 <VolumeUpRounded id="sound"/>
