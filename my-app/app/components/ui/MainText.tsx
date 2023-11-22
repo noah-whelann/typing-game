@@ -2,11 +2,12 @@
 import "./MainText.css"
 import {VolumeUpRounded} from '@mui/icons-material';
 import { useState, useEffect } from "react";
+import { flushSync } from "react-dom";
+
 
 const MainText = () => {
-    /* Logic Implementation required here */
-    let [wordsList, setWordsList] = useState(['demonstration', 'list', 'of', 'words']);
-    let [word, setWord] = useState('loading...');
+    const [wordsList, setWordsList] = useState(['demonstration', 'list', 'of', 'typing', 'words']);
+    let [word, setWord] = useState(' ');
     let [text, setText] = useState('');
 
     function textFocus() {
@@ -16,14 +17,14 @@ const MainText = () => {
     }
 
     function updateText() {
-        /* Gets text input from hidden textinput */
+        /* Gets currently typed text from invisible wordinput */
         let input = document.getElementById("wordinput") as HTMLInputElement;
         setText("");
         setText(input.value);
     }
 
     function nextWord() {
-        /* Function call assumes text field is empty */
+        /* Advances to next word, or default action if list is empty. Assumes text field is empty */
 
         if (wordsList.length <= 0) {
             setWord("Typing challenge complete!");
@@ -75,16 +76,18 @@ const MainText = () => {
     }
     
     useEffect(() => {
+        /* Fetches list of random words (default 10) and sets wordsList and word accordingly. */
         fetch('https://random-word-api.herokuapp.com/word?number=10')
             .then(response => response.json())
             .then(data => {
                 setWordsList(data);
+                //TODO: setWordsList is async, somehow call nextWord() after it runs
                 console.log(data);
-            })
-            .then(nextWord)
-            .then(() => {
-                console.log("words loaded");
                 console.log(wordsList);
+            })
+            .then(() => {
+                nextWord();
+                console.log("words loaded");
             });
     }, []);
 
@@ -93,7 +96,6 @@ const MainText = () => {
             <div id="maintext" onClick={ textFocus }>
                 { Text() }
             </div>
-            <p>{text}</p>
             <input id="wordinput" 
                 autoFocus 
                 autoComplete="off" 
