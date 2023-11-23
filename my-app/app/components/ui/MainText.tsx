@@ -2,7 +2,6 @@
 import "./MainText.css"
 import {VolumeUpRounded} from '@mui/icons-material';
 import { useState, useEffect } from "react";
-import { flushSync } from "react-dom";
 
 
 const MainText = () => {
@@ -38,7 +37,7 @@ const MainText = () => {
             typed = [];
         }
 
-        console.log(chars, typed);
+        
 
         for (let i = 0; i < Math.max(chars.length, typed.length); i++) {
 
