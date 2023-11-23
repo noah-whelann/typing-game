@@ -13,8 +13,8 @@ const SignInForm = () => {
 
     const { status } = useSession();
 
-    const [email, setEmail] = useState('email');
-    const [password, setPassword] = useState('password');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
 
     const [message, setMessage] = useState('');
 

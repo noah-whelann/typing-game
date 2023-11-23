@@ -8,9 +8,9 @@ import './signup.css'
 import Link from "next/link";
 
 const SignUpForm = () => {
-  const [email, setEmail] = useState("Email");
-  const [password, setPassword] = useState("Password");
-  const [name, setName] = useState("Name");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [name, setName] = useState("");
   const [message, setMessage] = useState("");
 
   const handleSubmit = async () => {
