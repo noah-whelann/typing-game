@@ -1,9 +1,33 @@
-import React from 'react'
+import React from 'react';
+import LineChart from '../components/LineChart';
+
+const dummyData = [
+  { date: '2022-01-01', wpm: 50, accuracy: 80 },
+  { date: '2022-01-02', wpm: 60, accuracy: 90 },
+  { date: '2022-01-03', wpm: 70, accuracy: 75 },
+  { date: '2022-01-04', wpm: 80, accuracy: 85 },
+  { date: '2022-01-05', wpm: 90, accuracy: 95 },
+];
 
 const Stats = () => {
-  return (
-    <div>Stats</div>
-  )
-}
+  const chartData = {
+    labels: dummyData.map((d) => d.date),
+    datasets: [
+      {
+        label: 'WPM over time',
+        data: dummyData.map((d) => d.wpm),
+        fill: false,
+        borderColor: 'rgb(75, 192, 192)',
+        tension: 0.1,
+      },
+    ],
+  };
 
-export default Stats
+  return (
+    <div>
+      <LineChart chartData={chartData} />
+    </div>
+  );
+};
+
+export default Stats;
