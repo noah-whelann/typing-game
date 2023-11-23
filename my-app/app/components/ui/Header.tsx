@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import logo from "@/app/assets/logo.png"
+import logo from "@/app/assets/light-logo.png"
 import { PersonRounded } from '@mui/icons-material';
 import Link from "next/link";
 import { getServerSession } from "next-auth";
