@@ -7,9 +7,9 @@ import "./Data.css"
 const Data = () => {
 
     /* Logic Implementation needed */
-    let [wordsTyped, setWordsTyped] = useState(10)
-    let [timer, setTimer] = useState('0');
-    let [wpm, setWPM] = useState(10)
+    let [wordsTyped, setWordsTyped] = useState<number>(10)
+    let [timer, setTimer] = useState<string>('0');
+    let [wpm, setWPM] = useState<number>(10)
 
     return (
         <div className="bottomstats">

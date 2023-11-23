@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import logo from "@/app/assets/logo.png"
+import logo from "@/app/assets/light-logo.png"
 import { PersonRounded } from '@mui/icons-material';
 import Link from "next/link";
 import { getServerSession } from "next-auth";
@@ -10,7 +10,7 @@ import "./Header.css"
 const Header = async () => {
 
   const session = await getServerSession(authOptions);
-
+  console.log(session)
   return (
     <div className="header">
       <div className="logo">
@@ -18,7 +18,8 @@ const Header = async () => {
       </div>
       <div className="user">
         <div className="dropdown">
-        <p id="username">{session?.user?.name}</p>
+        <p id="username">{session?.user?.id}</p>
+
           <PersonRounded tabIndex={0} className="cursor-pointer" id="userIcon" sx={{ fontSize: 40 }}/>
           <ul id="dropdownbox"
             tabIndex={0}
