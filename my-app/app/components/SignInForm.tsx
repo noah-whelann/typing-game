@@ -50,7 +50,7 @@ const SignInForm = () => {
 
     return (
         <div className='sign-in-box'>
-            <form className='form'>
+            <form className='signin-form'>
                 <Image src={logo} alt="logo" id="logo"/>
                 <input className="email" type='text' placeholder='Email' value={email} onChange={(e) => setEmail(e.target.value)} />
                 <input className="password" type='password' placeholder='Password' value={password} onChange={(e) => setPassword(e.target.value)} />

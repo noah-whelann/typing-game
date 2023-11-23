@@ -21,13 +21,13 @@ const SignUpForm = () => {
 
   return (
     <div className='sign-up-box'>
-        <form className='h-3/5'>
+        <form className='signup-form'>
             <Image src={logo} alt="logo" id="logo"/>
             <input className="name" type="text" placeholder="Name" value={name} onChange={(e) => setName(e.target.value)}/>
             <input className="email" type="text" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)}/>
             <input className="password" type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}/>
             <button className='signup-button' onClick={handleSubmit}>Sign up</button>
-            <p id='signup-text'>Already have an account? Sign in <Link href="/auth/signin"><u>here</u></Link>.</p>
+            <p id='signin-text'>Already have an account? Sign in <Link href="/auth/signin"><u>here</u></Link>.</p>
         </form>
     </div>
   );

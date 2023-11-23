@@ -7,14 +7,14 @@
     align-items: center;
     background-color: #212A3E;
 }
-form {
+.signup-form {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
     gap: 0.5rem;
     width: 30%;
+    height: 500px;
     box-shadow: 1px 1px 1em 1px rgba(241, 246, 249, 0.5);
     border-radius: 23px;
     background-color: #F1F6F9;
@@ -41,7 +41,7 @@ form {
 #logo {
     margin-bottom: 20px;
 }
-#signup-text {
+#signin-text {
     margin-top: 10px;
     font-family: "Roboto Mono", monospace;
 }
