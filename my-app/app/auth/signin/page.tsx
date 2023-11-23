@@ -3,7 +3,7 @@ import SignInForm from '@/app/components/SignInForm'
 
 const SignInPage = () => {
   return (
-    <div className="h-screen bg-primary">
+    <div className="h-screen bg-primary overflow-scroll">
         <SignInForm />
     </div>
       

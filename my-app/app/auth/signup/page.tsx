@@ -3,7 +3,7 @@ import SignUpForm from '../../components/SignUpForm'
 
 const SignUpPage = () => {
   return (
-    <div className='h-screen bg-primary'>
+    <div className='h-screen bg-primary overflow-scroll'>
         <SignUpForm />
     </div>
   )

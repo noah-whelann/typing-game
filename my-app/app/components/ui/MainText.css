@@ -4,11 +4,13 @@
     justify-content: center;
     align-items: center;
     margin: 130px;
+    background-color: #212A3E;
 }
 #maintext {
     color: #9BA4B5;
     font-family: "Roboto Mono", monospace;
     font-size: 30px;
+    background-color: #212A3E;
 }
 #sound {
     margin-top: 10px;

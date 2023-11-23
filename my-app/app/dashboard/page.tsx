@@ -9,7 +9,7 @@ import Head from 'next/head'
 const Dashboard = () => {
   return (
     <div
-      className="h-screen bg-primary"
+      className="h-screen bg-primary overflow-scroll"
     >
       <Head>
         <title>TypED</title>
