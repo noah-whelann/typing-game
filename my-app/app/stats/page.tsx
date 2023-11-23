@@ -4,9 +4,9 @@ import LineChart from '../components/LineChart';
 const dummyData = [
   { date: '2022-01-01', wpm: 50, accuracy: 80 },
   { date: '2022-01-02', wpm: 60, accuracy: 90 },
-  { date: '2022-01-03', wpm: 70, accuracy: 75 },
-  { date: '2022-01-04', wpm: 80, accuracy: 85 },
-  { date: '2022-01-05', wpm: 90, accuracy: 95 },
+  { date: '2022-01-03', wpm: 45, accuracy: 75 },
+  { date: '2022-01-04', wpm: 70, accuracy: 85 },
+  { date: '2022-01-05', wpm: 40, accuracy: 95 },
 ];
 
 const Stats = () => {
