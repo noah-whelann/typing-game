@@ -6,12 +6,13 @@ import { flushSync } from "react-dom";
 
 
 const MainText = () => {
-    const [wordsList, setWordsList] = useState(['demonstration', 'list', 'of', 'typing', 'words']);
-    let [word, setWord] = useState(' ');
+    const [wordsList, setWordsList] = useState(['...']);
+    let [wordIndex, setIndex] = useState(0);
+    let [word, setWord] = useState('...');
     let [text, setText] = useState('');
 
     function textFocus() {
-        /* Used to detect focus and stuff, can be changed */
+        /* Focuses user on wordinput */
         let input = document.getElementById("wordinput");
         if (input != null) input.focus();
     }
@@ -19,19 +20,8 @@ const MainText = () => {
     function updateText() {
         /* Gets currently typed text from invisible wordinput */
         let input = document.getElementById("wordinput") as HTMLInputElement;
-        setText("");
+        //setText("");
         setText(input.value);
-    }
-
-    function nextWord() {
-        /* Advances to next word, or default action if list is empty. Assumes text field is empty */
-
-        if (wordsList.length <= 0) {
-            setWord("Typing challenge complete!");
-        } else {
-            setWord(wordsList[0]);
-            setWordsList(wordsList.slice(1));
-        }
     }
 
     function Text() {
@@ -43,7 +33,7 @@ const MainText = () => {
             let input = document.getElementById("wordinput") as HTMLInputElement;
             input.value = "";
             updateText();
-            nextWord();
+            setIndex(wordIndex + 1);
             chars = Array.from(word);
             typed = [];
         }
@@ -75,21 +65,29 @@ const MainText = () => {
         )
     }
     
+    /* Fetches list of random words (default 10). */
     useEffect(() => {
-        /* Fetches list of random words (default 10) and sets wordsList and word accordingly. */
         fetch('https://random-word-api.herokuapp.com/word?number=10')
             .then(response => response.json())
             .then(data => {
                 setWordsList(data);
-                //TODO: setWordsList is async, somehow call nextWord() after it runs
-                console.log(data);
-                console.log(wordsList);
-            })
-            .then(() => {
-                nextWord();
-                console.log("words loaded");
             });
     }, []);
+
+    /* Updates other variables once random words list is fetched/updated */
+    useEffect(() => {
+        setWord(wordsList[0]);
+        setIndex(0);
+    }, [wordsList]);
+
+    /* Updates word once another word is indexed to */
+    useEffect(() => {
+        if (wordIndex >= wordsList.length) {
+            setWord("Typing challenge complete!");
+        } else {
+            setWord(wordsList[wordIndex]);
+        }
+    }, [wordIndex]);
 
     return (
         <div className="textdisplay">
