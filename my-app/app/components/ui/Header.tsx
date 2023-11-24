@@ -18,7 +18,7 @@ const Header = async () => {
       </div>
       <div className="user">
         <div className="dropdown">
-        <p id="username">{session?.user?.id}</p>
+        <p id="username">{session?.user?.name}</p>
 
           <PersonRounded tabIndex={0} className="cursor-pointer" id="userIcon" sx={{ fontSize: 40 }}/>
           <ul id="dropdownbox"
