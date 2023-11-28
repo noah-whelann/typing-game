@@ -1,9 +1,9 @@
 
-import type { NextApiRequest, NextApiResponse } from 'next';
 import { NextResponse } from 'next/server';
 import { createGame, getUserStats, cleanup } from '@/app/actions/createGame/createGame';
 
 export async function POST(req: Request) {
+  console.log("Received POST request")
   try {
     const gameData = JSON.parse(req.body);
 
@@ -24,6 +24,7 @@ export async function POST(req: Request) {
 }
 
 export async function GET(req: Request) {
+  console.log("Received GET request")
   try {
     // Assuming you have a userId parameter in the query string
     const userId = String(req.body.id); // Convert the string to a number
