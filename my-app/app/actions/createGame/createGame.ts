@@ -25,14 +25,21 @@ const createGame = async (data: GameData) => {
 };
 
 const getUserStats = async (userId: string) => {
-  return prisma.user.findUnique({
+  const user = await prisma.user.findUnique({
     where: {
-      id: userId,
-    },
-    include: {
-      games: true,
-    },
+      id: userId
+    }
   });
+
+  if (!user) {
+    // Handle the case where the user with the given id is not found
+    throw new Error('User not found');
+  }
+
+  return {
+    data: user
+  };
+
 };
 
 const cleanup = async () => {
