@@ -1,15 +1,16 @@
 "use client"
 import { useState } from "react";
 import Image from "next/image";
-import bottombar from "@/app/assets/bottom-bar.png"
+import darkbottombar from "@/app/assets/dark-bottom-bar.png"
+import lightbottombar from "@/app/assets/light-bottom-bar.png"
 import "./Data.css"
 
 const Data = () => {
-
+        
     /* Logic Implementation needed */
     let [wordsTyped, setWordsTyped] = useState<number>(10)
     let [timer, setTimer] = useState<string>('0');
-    let [wpm, setWPM] = useState<number>(10)
+    let [wpm, setWPM] = useState<number>(10);
 
     return (
         <div className="bottomstats">
@@ -40,7 +41,7 @@ const Data = () => {
                 </div>
             </div>
             <div id='just-a-bar'>
-                <Image src={ bottombar } alt="bar"/>
+                <Image src={lightbottombar} alt="bar"/>
             </div>
         </div>
     )

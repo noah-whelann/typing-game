@@ -5,15 +5,18 @@
     align-items: center;
     margin: 130px;
     background-color: #212A3E;
+    transition: .3s ease-in-out;
 }
 #maintext {
     color: #9BA4B5;
     font-family: "Roboto Mono", monospace;
     font-size: 30px;
     background-color: #212A3E;
+    transition: .3s ease-in-out;
 }
 #correcttext {
     color:#F1F6F9;
+    transition: .3s ease-in-out;
 }
 #incorrecttext {
     color:rgb(255, 78, 113);
@@ -32,4 +35,20 @@
 #sound {
     margin-top: 10px;
     color: #F1F6F9;
+    transition: .3s ease-in-out;
+}
+
+
+/* lightmode stuff */
+[data-theme="light"] .textdisplay{
+    background-color: #F1F6F9;
+}
+[data-theme="light"] #maintext{
+    background-color: #F1F6F9;
+}
+[data-theme="light"] #correcttext {
+    color:#212A3E;
+}
+[data-theme="light"] #sound {
+    color:#212A3E;
 }

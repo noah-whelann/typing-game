@@ -11,6 +11,7 @@
     color: #F1F6F9;
     font-family: "Roboto Mono", monospace;
     font-size: 16px;
+    transition: .3s ease-in-out;
 }
 #just-a-bar {
     margin-top: 20px;
@@ -34,4 +35,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+
+/* lightmode stuff */
+[data-theme="light"] .data{
+    color: #212A3E
 }

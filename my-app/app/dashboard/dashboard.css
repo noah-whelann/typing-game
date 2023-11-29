@@ -1,0 +1,10 @@
+[data-theme="dark"] .dashboard {
+    height: 100vh;
+    background-color: #212A3E;
+    overflow: scroll;
+    transition: .3s ease-in-out;
+}
+[data-theme="light"] .dashboard {
+    background-color: #F1F6F9;
+    transition: .3s ease-in-out;
+}

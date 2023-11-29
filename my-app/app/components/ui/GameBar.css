@@ -20,6 +20,7 @@
     border-radius: 23px;
     max-width: 768px;
     box-shadow: 1px 1px 1em 1px rgba(241, 246, 249, 0.5);
+    transition: .3s ease-in-out;
 }
 .timeselection {
     font-size: 16px;
@@ -43,26 +44,6 @@
     margin-left: 10px;
     margin-right: 10px; 
 }
-.hover-underline-animation {
-    font-size: 16px;
-}
-.hover-underline-animation:after {    
-    background: none repeat scroll 0 0 transparent;
-    bottom: 0;
-    content: "";
-    display: block;
-    height: 2px;
-    left: 50%;
-    position: absolute;
-    background: #394867;
-    transition: width 0.3s ease 0s, left 0.3s ease 0s;
-    width: 0;
-}
-.hover-underline-animation:hover:after { 
-    width: 100%; 
-    left: 0;
-}
-  
 .hrtime {
     height: 2px;
     width: 10%;
@@ -76,4 +57,18 @@
     border: none;
     transition: .3s ease-in-out;
     z-index: 2;
+}
+
+
+/* lightmode stuff */
+[data-theme='light'] #navbar{
+    background-color: #394867;
+    color: #F1F6F9;
+    box-shadow: 1px 4px 1em 5px rgba(0, 0, 0, 0.25);
+}
+[data-theme="light"] .hrdiff {
+    background: #F1F6F9;
+}
+[data-theme="light"] .hrtime {
+    background: #F1F6F9;
 }

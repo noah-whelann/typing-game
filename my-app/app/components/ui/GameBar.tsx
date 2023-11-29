@@ -4,9 +4,12 @@ import "./GameBar.css"
 import { Settings} from '@mui/icons-material';
 import { NavigateNextRounded } from '@mui/icons-material';
 import { NavigateBeforeRounded } from '@mui/icons-material';
+import { useTheme } from 'next-themes';
+import Data from './Data'
 
 const GameBar = () => {
-
+  const { theme, setTheme } = useTheme();
+  const [ color, setColor ] = useState("dark");
   const [activeTimeClass, setActiveTimeClass] = useState('hrtime ml-[7.5%]');
   const [activeDiffClass, setActiveDiffClass] = useState('hrdiff ml-[7.5%] w-[16%]');
   const handleTimeClick = (id: React.SetStateAction<string>) => {
@@ -21,6 +24,11 @@ const GameBar = () => {
     if (id == 'easy') {setActiveDiffClass('hrdiff ml-[7.5%] w-[16%]');}
     if (id == 'medium') {setActiveDiffClass('hrdiff ml-[38%] w-[25%]');}
     if (id == 'hard') {setActiveDiffClass('hrdiff ml-[77%] w-[16%]');}
+  }
+
+  const handleColorClick = () => {
+    setTheme(theme === 'dark' ? 'light' : 'dark');
+    setColor(color === 'dark' ? 'light' : 'dark');
   }
 
   return (
@@ -41,8 +49,8 @@ const GameBar = () => {
           <hr className={ activeDiffClass }/>
         </div>
         <p id="separator">|</p>
-        <button className='colortheme' id="darkmode">
-          <p className='hover-underline-animation'>dark</p>
+        <button className='colortheme' onClick={handleColorClick}>
+          <p className='hover-underline-animation'>{color}</p>
           </button>
         <button id="gamebar-icons">
         <Settings id='gamebaricons'/>
