@@ -64,9 +64,9 @@ main {
     align-items: center;
     position: relative;
     font-size: 20px;
-  }
+}
   
-  .hover-underline-animation::after {
+.hover-underline-animation::after {
     display: flex;
     justify-content: center;
     content: '';
@@ -78,20 +78,16 @@ main {
     background-color: #394867;
     transform-origin: bottom right;
     transition: transform 0.25s ease-out;
-  }
+}
   
-  .hover-underline-animation:hover::after {
+.hover-underline-animation:hover::after {
     transform: scaleX(1);
     transform-origin: bottom left;
-  }
-  :root {
+}
+:root {
 	--background: #212A3E;
 	--primary: #212A3E;
 	--secondary: #F1F6F9;
-	--third: #e27fcb;
-}
-.shape {
- 
 }
 
 @keyframes morph {

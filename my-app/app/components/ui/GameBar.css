@@ -1,3 +1,7 @@
+:root {
+	--underline-height: .5em;
+	--transition-duration : .5s;
+}
 .gamebar{
     display: flex;
     justify-content: center;
@@ -17,13 +21,13 @@
     max-width: 768px;
     box-shadow: 1px 1px 1em 1px rgba(241, 246, 249, 0.5);
 }
-#timeselection {
+.timeselection {
     font-size: 16px;
     font-family: "Roboto Mono", monospace;
     margin-left: 20px;
     margin-right: 20px; 
 }
-#difficulty {
+.difficulty {
     font-size: 16px;
     font-family: "Roboto Mono", monospace;
     margin-left: 20px;
@@ -38,4 +42,38 @@
 #gamebar-icons {
     margin-left: 10px;
     margin-right: 10px; 
+}
+.hover-underline-animation {
+    font-size: 16px;
+}
+.hover-underline-animation:after {    
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: #394867;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+}
+.hover-underline-animation:hover:after { 
+    width: 100%; 
+    left: 0;
+}
+  
+.hrtime {
+    height: 2px;
+    width: 10%;
+    background: #394867;
+    border: none;
+    transition: .3s ease-in-out;
+}
+.hrdiff {
+    height: 2px;
+    background: #394867;
+    border: none;
+    transition: .3s ease-in-out;
+    z-index: 2;
 }
