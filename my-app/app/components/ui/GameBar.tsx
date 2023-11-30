@@ -5,7 +5,6 @@ import { Settings} from '@mui/icons-material';
 import { NavigateNextRounded } from '@mui/icons-material';
 import { NavigateBeforeRounded } from '@mui/icons-material';
 import { useTheme } from 'next-themes';
-import Data from './Data'
 
 const GameBar = () => {
   const { theme, setTheme } = useTheme();
