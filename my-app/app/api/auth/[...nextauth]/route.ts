@@ -97,7 +97,7 @@ export const authOptions: AuthOptions = {
     },
     async session(params: { session: Session; token: JWT }) {
       if (params.session.user) {
-        params.session.user = params.token as any;
+        params.session.user.email = params.token.email
       } 
       return params.session;
     },
