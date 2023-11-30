@@ -48,6 +48,7 @@ const MainText = () => {
     let [start, setStart] = useState(0);
     let [timer, setTimer] = useState(0);
     let [wpm, setWPM] = useState(0);
+    const {theme, setTheme} = useTheme();
 
 
     function textFocus() {
