@@ -1,4 +1,4 @@
-
+"use client"
 import React from "react";
 import Image from "next/image";
 import lightlogo from "@/app/assets/light-logo.png"
@@ -7,22 +7,18 @@ import { PersonRounded } from '@mui/icons-material';
 import Link from "next/link";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
-// import { useTheme } from 'next-themes';
+import { useTheme } from 'next-themes';
 import "./Header.css";
 
-const Header = async () => {
-  // const {theme, setTheme} = useTheme();
-  const session = await getServerSession(authOptions);
-  console.log(session)
+const Header = () => {
+  const {theme, setTheme} = useTheme();
   return (
     <div className="header">
       <div className="logo">
-        {/* <Image src={theme == 'light' ? lightlogo : darklogo} alt="logo" /> */}
+        <Image src={theme == 'light' ? darklogo : lightlogo} alt="logo" />
       </div>
       <div className="user">
         <div className="dropdown">
-        <p id="username">{session?.user?.name}</p>
-
           <PersonRounded tabIndex={0} className="cursor-pointer" id="userIcon" sx={{ fontSize: 40 }}/>
           <ul id="dropdownbox"
             tabIndex={0}

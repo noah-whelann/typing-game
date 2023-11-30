@@ -6,7 +6,7 @@ import Image from "next/image";
 import darkbottombar from "@/app/assets/dark-bottom-bar.png"
 import lightbottombar from "@/app/assets/light-bottom-bar.png"
 import "./Data.css"
-
+import { useTheme } from 'next-themes';
 import LineChart from '../LineChart';
 
 const dummyData = [
@@ -46,6 +46,7 @@ const MainText = () => {
 
     let [timer, setTimer] = useState<string>('0');
     let [wpm, setWPM] = useState<number>(0);
+    const {theme, setTheme} = useTheme();
 
     let start = new Date();
 
@@ -174,7 +175,7 @@ const MainText = () => {
                     </div>
                 </div>
                 <div id='just-a-bar'>
-                    <Image src={lightbottombar} alt="bar"/>
+                    <Image src={theme=='light' ? darkbottombar : lightbottombar} alt="bar"/>
                 </div>
             </div>
         </div>

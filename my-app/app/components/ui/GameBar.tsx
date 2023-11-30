@@ -49,7 +49,7 @@ const GameBar = () => {
         </div>
         <p id="separator">|</p>
         <button className='colortheme' onClick={handleColorClick}>
-          <p className='hover-underline-animation'>{color}</p>
+          <p>{color}</p>
           </button>
         <button id="gamebar-icons">
         <Settings id='gamebaricons'/>

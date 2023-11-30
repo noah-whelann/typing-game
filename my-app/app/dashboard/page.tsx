@@ -3,6 +3,7 @@ import Header from "../components/ui/Header";
 import MainText from "../components/ui/MainText";
 import Footer from "../components/ui/Footer"
 import Head from 'next/head'
+import Name from '../components/ui/name'
 import "./dashboard.css"
 
 const Dashboard = () => {
@@ -12,6 +13,7 @@ const Dashboard = () => {
         <title>TypED</title>
       </Head>
       <Header />
+      <Name />
       <GameBar />
       <MainText />
       <Footer />

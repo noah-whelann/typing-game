@@ -5,6 +5,7 @@
     transition: .3s ease-in-out;
 }
 [data-theme="light"] .dashboard {
+    height: 100vh;
     background-color: #F1F6F9;
     transition: .3s ease-in-out;
 }
