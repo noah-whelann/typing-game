@@ -25,6 +25,7 @@ const createGame = async (data: GameData) => {
 };
 
 const getUserStats = async (userId: string) => {
+  console.log(userId)
   const user = await prisma.user.findUnique({
     where: {
       id: userId

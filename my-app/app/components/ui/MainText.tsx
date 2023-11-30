@@ -43,12 +43,12 @@ const MainText = () => {
     let [wordIndex, setIndex] = useState(0);
     let [word, setWord] = useState('...');
     let [text, setText] = useState('');
+    let [typing, setTyping] = useState(false);
 
-    let [timer, setTimer] = useState<string>('0');
-    let [wpm, setWPM] = useState<number>(0);
-    const {theme, setTheme} = useTheme();
+    let [start, setStart] = useState(0);
+    let [timer, setTimer] = useState(0);
+    let [wpm, setWPM] = useState(0);
 
-    let start = new Date();
 
     function textFocus() {
         /* Focuses user on wordinput */
@@ -59,8 +59,19 @@ const MainText = () => {
     function updateText() {
         /* Gets currently typed text from invisible wordinput */
         let input = document.getElementById("wordinput") as HTMLInputElement;
-        //setText("");
         setText(input.value);
+        if (wordIndex == 0 && !typing) {
+            setTyping(true);
+        }
+        updateTimer();
+    }
+
+    function updateTimer() {
+        if (typing == true) {
+            setTimer(Math.floor(Date.now()/1000) - start);
+        } else {
+            setTimer(timer);
+        }
     }
 
     function Text() {
@@ -77,8 +88,6 @@ const MainText = () => {
             typed = [];
         }
 
-        
-
         for (let i = 0; i < Math.max(chars.length, typed.length); i++) {
 
             /* 
@@ -89,11 +98,19 @@ const MainText = () => {
             */
             
             if (i >= chars.length) {
-                render.push({id: i, char: typed.at(i), status: 2});
+                if (typed.at(i) == ' ') {
+                    render.push({id: i, char: '_', status: 2});
+                } else {
+                    render.push({id: i, char: typed.at(i), status: 2});
+                }
             } else if (i >= typed.length) {
                 render.push({id: i, char: chars.at(i), status: 0});
             } else if (typed.at(i) != chars.at(i)) {
-                render.push({id: i, char: chars.at(i), status: 2});
+                if (chars.at(i) == ' ') {
+                    render.push({id: i, char: '_', status: 2});
+                } else {
+                    render.push({id: i, char: chars.at(i), status: 2});
+                }
             } else {
                 render.push({id: i, char: chars.at(i), status: 1});
             }
@@ -104,6 +121,8 @@ const MainText = () => {
         )
     }
     
+    //let intervalID = setInterval(updateTimer, 1000);
+
     /* Fetches list of random words (default 10). */
     useEffect(() => {
         fetch('https://random-word-api.herokuapp.com/word?number=10')
@@ -119,10 +138,20 @@ const MainText = () => {
         setIndex(0);
     }, [wordsList]);
 
+    /* Starts and updates timers based on typing status */
+    useEffect(() => {
+        if (typing) {
+            setStart(Math.floor(Date.now()/1000));
+        } else {
+
+        }
+    }, [typing]);
+
     /* Updates word once another word is indexed to */
     useEffect(() => {
         if (wordIndex >= wordsList.length) {
             setWord("Typing challenge complete!");
+            setTyping(false);
         } else {
             setWord(wordsList[wordIndex]);
         }
@@ -159,7 +188,7 @@ const MainText = () => {
                     </div>
                     <div className="timer">
                         <p id="timer-number">
-                        { start.getSeconds() + (start.getMinutes() * 60) }
+                        { timer }s
                         </p>
                         <p id="timer-text">
                         time elapsed
@@ -167,7 +196,7 @@ const MainText = () => {
                     </div>
                     <div className="wpm">
                         <p id="wpm-number">
-                        { wpm }
+                        { wordIndex == 0 ? '--' : Math.floor(wordIndex / (timer/60)) }
                         </p>
                         <p id="wpm-text">
                         words per min

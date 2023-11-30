@@ -30,7 +30,9 @@ const SignInForm = () => {
 
             if(!signInResponse || signInResponse.ok !== true) {
                 setMessage("Invalid credentials");
+                console.log('not successful')
             } else {
+                console.log('successful')
                 router.refresh();
             }
 
