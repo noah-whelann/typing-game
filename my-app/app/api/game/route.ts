@@ -1,6 +1,7 @@
 
 import { NextResponse } from 'next/server';
 import { createGame, getUserStats, cleanup } from '@/app/actions/createGame/createGame';
+import { parse } from 'url';
 
 export interface GetUserGames extends Request {
   id: string
@@ -28,15 +29,22 @@ export async function POST(req: Request) {
   }
 }
 
-export async function GET(req: GetUserGames) {
-  console.log("Received GET request")
+export async function GET(req: Request) {
+  console.log("Received GET request");
   try {
-    // Assuming you have a userId parameter in the query string
-    const userId = String(req.id); // Convert the string to a number
+    // Access the 'id' parameter from the query string
+    const { query } = parse(req.url!, true);
+    const userId = String(query.id)
 
     // Use the getUserStats function from prismaUtils
     const user = await getUserStats(userId);
-    const userGames = user.data.games
+
+    if (!user) {
+      console.error('User not found');
+      return NextResponse.json({ success: false, error: 'User not found' });
+    }
+
+    const userGames = user.data.games;
     // Send a success response with the user stats
     return NextResponse.json({ data: userGames });
   } catch (error) {
