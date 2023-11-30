@@ -1,20 +1,23 @@
+
 import React from "react";
 import Image from "next/image";
-import logo from "@/app/assets/light-logo.png"
+import lightlogo from "@/app/assets/light-logo.png"
+import darklogo from "@/app/assets/dark-logo.png"
 import { PersonRounded } from '@mui/icons-material';
 import Link from "next/link";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
-import "./Header.css"
+// import { useTheme } from 'next-themes';
+import "./Header.css";
 
 const Header = async () => {
-
+  // const {theme, setTheme} = useTheme();
   const session = await getServerSession(authOptions);
   console.log(session)
   return (
     <div className="header">
       <div className="logo">
-        <Image src={logo} alt="logo" />
+        {/* <Image src={theme == 'light' ? lightlogo : darklogo} alt="logo" /> */}
       </div>
       <div className="user">
         <div className="dropdown">

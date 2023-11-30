@@ -30,3 +30,11 @@
 .footer-buttons p{
     margin-left: 5px;
 }
+
+/* lightmode stuff */
+[data-theme="light"] .footer {
+    background-color: #F1F6F9;
+}
+[data-theme="dark"] .footer {
+    background-color: #212A3E;
+}
