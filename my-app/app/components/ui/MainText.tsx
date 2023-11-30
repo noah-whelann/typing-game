@@ -49,7 +49,6 @@ const MainText = () => {
     let [timer, setTimer] = useState(0);
     let [wpm, setWPM] = useState(0);
 
-
     function textFocus() {
         /* Focuses user on wordinput */
         let input = document.getElementById("wordinput");
