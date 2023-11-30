@@ -2,13 +2,52 @@
 import "./MainText.css"
 import {VolumeUpRounded} from '@mui/icons-material';
 import { useState, useEffect } from "react";
+import Image from "next/image";
+import darkbottombar from "@/app/assets/dark-bottom-bar.png"
+import lightbottombar from "@/app/assets/light-bottom-bar.png"
+import "./Data.css"
 
+import LineChart from '../LineChart';
+
+const dummyData = [
+  { date: '2022-01-01', wpm: 50, accuracy: 80 },
+  { date: '2022-01-02', wpm: 60, accuracy: 90 },
+  { date: '2022-01-03', wpm: 45, accuracy: 75 },
+  { date: '2022-01-04', wpm: 70, accuracy: 85 },
+  { date: '2022-01-05', wpm: 40, accuracy: 95 },
+];
+
+const Stats = () => {
+  const chartData = {
+    labels: dummyData.map((d) => d.date),
+    datasets: [
+      {
+        label: 'WPM over time',
+        data: dummyData.map((d) => d.wpm),
+        fill: false,
+        borderColor: 'rgb(75, 192, 192)',
+        tension: 0.1,
+      },
+    ],
+  };
+
+  return (
+    <div>
+      <LineChart chartData={chartData} />
+    </div>
+  );
+};
 
 const MainText = () => {
     const [wordsList, setWordsList] = useState(['...']);
     let [wordIndex, setIndex] = useState(0);
     let [word, setWord] = useState('...');
     let [text, setText] = useState('');
+
+    let [timer, setTimer] = useState<string>('0');
+    let [wpm, setWPM] = useState<number>(0);
+
+    let start = new Date();
 
     function textFocus() {
         /* Focuses user on wordinput */
@@ -107,8 +146,38 @@ const MainText = () => {
             <button>
                 <VolumeUpRounded id="sound"/>
             </button>
+            <div className="bottomstats">
+                <div className="data">
+                    <div className="words-typed">
+                        <p id="words-typed-number">
+                        { wordIndex }
+                        </p>
+                        <p id="words-typed-text">
+                        words typed
+                        </p>
+                    </div>
+                    <div className="timer">
+                        <p id="timer-number">
+                        { start.getSeconds() + (start.getMinutes() * 60) }
+                        </p>
+                        <p id="timer-text">
+                        time elapsed
+                        </p>
+                    </div>
+                    <div className="wpm">
+                        <p id="wpm-number">
+                        { wpm }
+                        </p>
+                        <p id="wpm-text">
+                        words per min
+                        </p>
+                    </div>
+                </div>
+                <div id='just-a-bar'>
+                    <Image src={lightbottombar} alt="bar"/>
+                </div>
+            </div>
         </div>
-       
     );
 }
 
