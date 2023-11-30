@@ -10,7 +10,9 @@ import "./Header.css"
 const Header = async () => {
 
   const session = await getServerSession(authOptions);
+
   console.log(session)
+  
   return (
     <div className="header">
       <div className="logo">
