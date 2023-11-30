@@ -7,10 +7,18 @@ import { parse } from 'url';
 export async function POST(req: Request) {
   console.log("Received POST request")
   try {
-    const gameData = JSON.parse(req.body);
+    const bodyString = String(req.body);
+    const body = JSON.parse(bodyString);
+    const { userId, wpm, accuracy, duration, date } = body;
 
     // Use the createGame function from prismaUtils
-    const savedGameData = await createGame(gameData);
+    const savedGameData = await createGame({
+      userId,
+      wpm,
+      accuracy,
+      duration,
+      date,
+    });
 
     // Send a success response with the saved data
     return NextResponse.json({ success: true, data: savedGameData });
