@@ -2,10 +2,6 @@
 import { NextResponse } from 'next/server';
 import { createGame, getUserStats, cleanup } from '@/app/actions/createGame/createGame';
 import { parse } from 'url';
-
-export interface GetUserGames extends Request {
-  id: string
-}
  
 
 export async function POST(req: Request) {
