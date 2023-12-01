@@ -84,7 +84,7 @@ const MainText = () => {
             let input = document.getElementById("wordinput") as HTMLInputElement;
             input.value = "";
             updateText();
-            setIndex(wordIndex + 1);
+            if (typing) setIndex(wordIndex + 1);
             chars = Array.from(word);
             typed = [];
         }
@@ -98,21 +98,32 @@ const MainText = () => {
             status = 2: typed, incorrect
             */
             
+            //for typed characters after word
             if (i >= chars.length) {
                 if (typed.at(i) == ' ') {
                     render.push({id: i, char: '_', status: 2});
                 } else {
                     render.push({id: i, char: typed.at(i), status: 2});
                 }
-            } else if (i >= typed.length) {
-                render.push({id: i, char: chars.at(i), status: 0});
-            } else if (typed.at(i) != chars.at(i)) {
+            } 
+            //for non-typed characters
+            else if (i >= typed.length) {
+                if (chars.at(i) == ' ') {
+                    render.push({id: i, char: ' ', status: 0});
+                } else {
+                    render.push({id: i, char: chars.at(i), status: 0});
+                }
+            } 
+            //for incorrectly typed characters
+            else if (typed.at(i) != chars.at(i)) {
                 if (chars.at(i) == ' ') {
                     render.push({id: i, char: '_', status: 2});
                 } else {
                     render.push({id: i, char: chars.at(i), status: 2});
                 }
-            } else {
+            } 
+            //for correctly typed characters
+            else {
                 render.push({id: i, char: chars.at(i), status: 1});
             }
         }
