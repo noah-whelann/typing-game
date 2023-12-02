@@ -44,10 +44,10 @@ const MainText = () => {
     let [word, setWord] = useState('...');
     let [text, setText] = useState('');
     let [typing, setTyping] = useState(false);
-
     let [start, setStart] = useState(0);
     let [timer, setTimer] = useState(0);
-    let [wpm, setWPM] = useState(0);
+    let [correctChars, setCorrectChars] = useState(0);
+    let [typedChars, setTypedChars] = useState(0);
     const {theme, setTheme} = useTheme();
 
 
@@ -135,9 +135,9 @@ const MainText = () => {
     
     //let intervalID = setInterval(updateTimer, 1000);
 
-    /* Fetches list of random words (default 10). */
+    /* Fetches list of random words (default 10 words, between 5-10 chars). */
     useEffect(() => {
-        fetch('https://random-word-api.herokuapp.com/word?number=10')
+        fetch('https://random-word.ryanrk.com/api/en/word/random/10?minlength=5&maxlength=10')
             .then(response => response.json())
             .then(data => {
                 setWordsList(data);

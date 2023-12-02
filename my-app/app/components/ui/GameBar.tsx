@@ -5,8 +5,12 @@ import { Settings} from '@mui/icons-material';
 import { NavigateNextRounded } from '@mui/icons-material';
 import { NavigateBeforeRounded } from '@mui/icons-material';
 import { useTheme } from 'next-themes';
+import { useCookies } from 'next-client-cookies';
+
 
 const GameBar = () => {
+  console.log(useCookies().get());
+
   const { theme, setTheme } = useTheme();
   const [ color, setColor ] = useState("dark");
   const [activeTimeClass, setActiveTimeClass] = useState('hrtime ml-[7.5%]');
@@ -17,7 +21,6 @@ const GameBar = () => {
     if (id == 'timethree') {setActiveTimeClass('hrtime ml-[57.5%]');}
     if (id == 'timefour') {setActiveTimeClass('hrtime ml-[82.5%]');}
   };
-  
 
   const handleDiffClick = (id: React.SetStateAction<string>) => {
     if (id == 'easy') {setActiveDiffClass('hrdiff ml-[7.5%] w-[16%]');}
@@ -34,10 +37,10 @@ const GameBar = () => {
     <div className="gamebar">
       <div id="navbar">
         <div className="time">
-          <button className="timeselection" onClick={() => handleTimeClick('timeone')} id="timeone">10s</button>
-          <button className="timeselection" onClick={() => handleTimeClick('timetwo')} id="timetwo">15s</button>
-          <button className="timeselection" onClick={() => handleTimeClick('timethree')} id="timethree">30s</button>
-          <button className="timeselection" onClick={() => handleTimeClick('timefour')} id="timefour">60s</button>
+          <button className="timeselection" onClick={() => handleTimeClick('timeone')} id="timeone">10</button>
+          <button className="timeselection" onClick={() => handleTimeClick('timetwo')} id="timetwo">20</button>
+          <button className="timeselection" onClick={() => handleTimeClick('timethree')} id="timethree">30</button>
+          <button className="timeselection" onClick={() => handleTimeClick('timefour')} id="timefour">50</button>
           <hr className={ activeTimeClass }/>
         </div>
         <p id="separator">|</p>

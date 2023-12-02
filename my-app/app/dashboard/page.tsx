@@ -6,7 +6,9 @@ import Head from 'next/head'
 import Name from '../components/ui/name'
 import "./dashboard.css"
 
+
 const Dashboard = () => {
+
   return (
       <div className="dashboard">
       <Head>
