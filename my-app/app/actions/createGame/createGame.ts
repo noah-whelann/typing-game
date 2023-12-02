@@ -5,6 +5,7 @@ import { PrismaClient } from "@prisma/client";
 const prisma = new PrismaClient();
 
 interface GameData {
+  id: number
   userId: string;
   wpm: number;
   accuracy: number;
@@ -15,6 +16,7 @@ interface GameData {
 const createGame = async (data: GameData) => {
   return prisma.game.create({
     data: {
+      id: data.id,
       UserId: data.userId,
       wpm: data.wpm,
       accuracy: data.accuracy,
@@ -24,7 +26,7 @@ const createGame = async (data: GameData) => {
   });
 };
 
-const getUserStats = async (userId: string) => {
+const getUser = async (userId: string) => {
   console.log(userId)
   const user = await prisma.user.findUnique({
     where: {
@@ -50,4 +52,4 @@ const cleanup = async () => {
   await prisma.$disconnect();
 };
 
-export { createGame, getUserStats, cleanup };
+export { createGame, getUser, cleanup };
