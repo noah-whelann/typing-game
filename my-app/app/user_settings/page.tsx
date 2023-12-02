@@ -2,7 +2,9 @@ import React from 'react'
 
 const UserSettings = () => {
   return (
-    <div>UserSettings</div>
+    <div className="h-screen bg-primary text-secondary">
+      UserSettings
+    </div>
   )
 }
 
