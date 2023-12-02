@@ -24,7 +24,7 @@ const createGame = async (data: GameData) => {
   });
 };
 
-const getUserStats = async (userId: string) => {
+const getUser = async (userId: string) => {
   console.log(userId)
   const user = await prisma.user.findUnique({
     where: {
@@ -50,4 +50,4 @@ const cleanup = async () => {
   await prisma.$disconnect();
 };
 
-export { createGame, getUserStats, cleanup };
+export { createGame, getUser, cleanup };

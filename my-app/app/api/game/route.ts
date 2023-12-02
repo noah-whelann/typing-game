@@ -1,6 +1,6 @@
 
 import { NextResponse } from 'next/server';
-import { createGame, getUserStats, cleanup } from '@/app/actions/createGame/createGame';
+import { createGame, getUser, cleanup } from '@/app/actions/createGame/createGame';
 import { parse } from 'url';
  
 
@@ -41,7 +41,7 @@ export async function GET(req: Request) {
     const userId = String(query.id)
 
     // Use the getUserStats function from prismaUtils
-    const user = await getUserStats(userId);
+    const user = await getUser(userId);
 
     if (!user) {
       console.error('User not found');
