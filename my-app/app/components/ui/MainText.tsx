@@ -8,6 +8,8 @@ import lightbottombar from "@/app/assets/light-bottom-bar.png"
 import "./Data.css"
 import { useTheme } from 'next-themes';
 import LineChart from '../LineChart';
+import { useCookies } from 'next-client-cookies';
+
 
 const dummyData = [
   { date: '2022-01-01', wpm: 50, accuracy: 80 },
@@ -49,7 +51,7 @@ const MainText = () => {
     let [correctChars, setCorrectChars] = useState(0);
     let [typedChars, setTypedChars] = useState(0);
     const {theme, setTheme} = useTheme();
-
+    const cookies = useCookies();
 
     function textFocus() {
         /* Focuses user on wordinput */
@@ -137,7 +139,7 @@ const MainText = () => {
 
     /* Fetches list of random words (default 10 words, between 5-10 chars). */
     useEffect(() => {
-        fetch('https://random-word.ryanrk.com/api/en/word/random/10?minlength=5&maxlength=10')
+        fetch('https://random-word.ryanrk.com/api/en/word/random/' + cookies.get('wordCount') + '?' + cookies.get('diff'))
             .then(response => response.json())
             .then(data => {
                 setWordsList(data);
@@ -168,6 +170,7 @@ const MainText = () => {
             setWord(wordsList[wordIndex]);
         }
     }, [wordIndex]);
+
 
     return (
         <div className="textdisplay">
