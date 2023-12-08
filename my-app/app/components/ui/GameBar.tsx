@@ -45,19 +45,19 @@ const GameBar = () => {
     if (id == 'easy') {
       setActiveDiffClass('hrdiff ml-[7.5%] w-[16%]');
       cookies.set('activeDiffClass', 'hrdiff ml-[7.5%] w-[16%]');
-      cookies.set('diff', 'maxlength=5');
+      cookies.set('diff', 'minlength=4&maxlength=7');
       window.location.reload();
     }
     if (id == 'medium') {
       setActiveDiffClass('hrdiff ml-[38%] w-[25%]');
       cookies.set('activeDiffClass', 'hrdiff ml-[38%] w-[25%]');
-      cookies.set('diff', 'minlength=5&maxlength=10');
+      cookies.set('diff', 'minlength=7&maxlength=14');
       window.location.reload();
     }
     if (id == 'hard') {
       setActiveDiffClass('hrdiff ml-[77%] w-[16%]');
       cookies.set('activeDiffClass', 'hrdiff ml-[77%] w-[16%]');      
-      cookies.set('diff', 'minlength=10');
+      cookies.set('diff', 'minlength=14');
       window.location.reload();
     }
   }
