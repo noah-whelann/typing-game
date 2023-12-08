@@ -156,8 +156,6 @@ const MainText = () => {
     useEffect(() => {
         if (typing) {
             setStart(Math.floor(Date.now()/1000));
-        } else {
-
         }
     }, [typing]);
 
@@ -171,8 +169,51 @@ const MainText = () => {
         }
     }, [wordIndex]);
 
+    if (!typing && wordIndex > 0) {
+        return (
+            <div className="textdisplay">
+            <div id="maintext">
+                <span id="correcttext">Typing challenge complete!</span>
+            </div>
+            <div>
+                <Stats></Stats>
+            </div>
+            <div className="bottomstats">
+                <div className="data">
+                    <div className="words-typed">
+                        <p id="words-typed-number">
+                        { wordIndex }
+                        </p>
+                        <p id="words-typed-text">
+                        words typed
+                        </p>
+                    </div>
+                    <div className="timer">
+                        <p id="timer-number">
+                        { timer }s
+                        </p>
+                        <p id="timer-text">
+                        time elapsed
+                        </p>
+                    </div>
+                    <div className="wpm">
+                        <p id="wpm-number">
+                        { wordIndex == 0 ? '--' : Math.floor(wordIndex / (timer/60)) }
+                        </p>
+                        <p id="wpm-text">
+                        words per min
+                        </p>
+                    </div>
+                </div>
+                <div id='just-a-bar'>
+                    <Image src={theme=='light' ? darkbottombar : lightbottombar} alt="bar"/>
+                </div>
+            </div>
+        </div>
+        );
+    }
 
-    return (
+    else return (
         <div className="textdisplay">
             <div id="maintext" onClick={ textFocus }>
                 { Text() }
