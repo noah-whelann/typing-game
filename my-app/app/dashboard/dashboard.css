@@ -1,3 +1,18 @@
+#nametag{
+    color: #F1F6F9;
+    position: absolute;
+    top: 6.5vh;
+    right: 8vw;
+    font-family: "Roboto Mono", monospace;
+}
+::-webkit-scrollbar {
+    display: none;
+}
+[data-theme="light"] #nametag{
+    color: #212A3E;
+    transition: .3s ease-in-out;
+}
+
 [data-theme="dark"] .dashboard {
     height: 100vh;
     background-color: #212A3E;
@@ -7,5 +22,6 @@
 [data-theme="light"] .dashboard {
     height: 100vh;
     background-color: #F1F6F9;
+    overflow: scroll;
     transition: .3s ease-in-out;
 }

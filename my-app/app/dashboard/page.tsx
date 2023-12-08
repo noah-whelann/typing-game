@@ -15,7 +15,7 @@ const Dashboard = () => {
         <title>TypED</title>
       </Head>
       <Header />
-      <Name />
+      <div id='nametag'><Name /></div>
       <GameBar />
       <MainText />
       <Footer />
