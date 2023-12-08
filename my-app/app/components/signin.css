@@ -29,6 +29,9 @@
     box-shadow: 1px 1px 1em 1px rgba(112, 112, 112, 0.5);
     font-family: "Roboto Mono", monospace;
 }
+.email:focus,.password:focus {
+    outline: none;
+}
 .signin-button {
     color: #F1F6F9;
     font-size: 18px;
