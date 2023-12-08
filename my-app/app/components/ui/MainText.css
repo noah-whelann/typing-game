@@ -13,6 +13,7 @@
     font-size: 30px;
     background-color: #212A3E;
     transition: .3s ease-in-out;
+    white-space: pre;
 }
 #correcttext {
     color:#F1F6F9;

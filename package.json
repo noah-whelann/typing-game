@@ -1,7 +1,9 @@
 {
   "dependencies": {
+    "cookies-next": "^4.1.0",
     "next": "^14.0.3",
     "next-auth": "^4.24.5",
+    "next-themes": "^0.2.1",
     "node": "^21.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

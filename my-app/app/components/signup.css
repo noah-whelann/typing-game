@@ -26,6 +26,7 @@
     width: 80%;
     border-radius: 23px;
     box-shadow: 1px 1px 1em 1px rgba(112, 112, 112, 0.5);
+    background-color: #F1F6F9;
     font-family: "Roboto Mono", monospace;
 }
 .signup-button {
