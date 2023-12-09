@@ -25,5 +25,5 @@ export const signUp = async (email: string, password: string, name: string) => {
     },
   });
 
-  return "Successfully created new user.";
+  return "Success";
 };

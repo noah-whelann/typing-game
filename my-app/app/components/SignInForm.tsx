@@ -67,7 +67,7 @@ const SignInForm = () => {
           Sign in
         </button>
         <p id="signup-text">
-          Don't have an account? Sign up{" "}
+          Don&apos;t have an account? Sign up{" "}
           <Link href="/auth/signup">
             <u>here</u>
           </Link>
