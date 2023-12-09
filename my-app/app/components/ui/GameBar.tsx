@@ -1,5 +1,5 @@
 'use client';
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./GameBar.css"
 import { Settings} from '@mui/icons-material';
 import { NavigateNextRounded } from '@mui/icons-material';
@@ -13,8 +13,8 @@ const GameBar = () => {
   const [ color, setColor ] = useState(cookies.get('theme') == null ? 'dark' : cookies.get('theme'));
   const [activeTimeClass, setActiveTimeClass] = useState(cookies.get('activeTimeClass') == null ? 'hrtime ml-[7.5%]' : cookies.get('activeTimeClass'));
   const [activeDiffClass, setActiveDiffClass] = useState(cookies.get('activeDiffClass') == null ? 'hrdiff ml-[7.5%] w-[16%]' : cookies.get('activeDiffClass'));
-
-  const handleTimeClick = (id: React.SetStateAction<string>) => {
+  
+  const handleTimeClick = (id: string) => {
     if (id == 'timeone') {
       setActiveTimeClass('hrtime ml-[7.5%]');
       cookies.set('activeTimeClass', 'hrtime ml-[7.5%]');
@@ -63,8 +63,10 @@ const GameBar = () => {
   }
 
   const handleColorClick = () => {
-    setTheme(theme === 'dark' ? 'light' : 'dark');
-    setColor(color === 'dark' ? 'light' : 'dark');
+    const newTheme = theme === 'dark' ? 'light' : 'dark';
+    setTheme(newTheme);
+    setColor(newTheme);
+    cookies.set('theme', newTheme);
   }
 
   return (
