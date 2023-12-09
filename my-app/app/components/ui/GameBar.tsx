@@ -66,7 +66,6 @@ const GameBar = () => {
     const newTheme = theme === 'dark' ? 'light' : 'dark';
     setTheme(newTheme);
     setColor(newTheme);
-    cookies.set('theme', newTheme);
   }
 
   return (
