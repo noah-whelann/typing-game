@@ -109,7 +109,20 @@ const MainText = () => {
 
     /* Fetches list of random words (default 10 words, between 5-10 chars). */
     useEffect(() => {
-        fetch('https://random-word.ryanrk.com/api/en/word/random/' + cookies.get('wordCount') + '?' + cookies.get('diff'))
+
+
+        if (!cookies.get('wordCount')) {
+            document.cookie = `workCount=10; path=/`;
+        }
+
+        if (!cookies.get('diff')) {
+            document.cookie = `diff=easy; path=/`;
+        }
+
+        const wordCount = cookies.get('wordCount') || '10';
+        const diff = cookies.get('diff') || 'easy'
+
+        fetch(`https://random-word.ryanrk.com/api/en/word/random/${wordCount}?${diff}`)
             .then(response => response.json())
             .then(data => {
                 setWordsList(data);
