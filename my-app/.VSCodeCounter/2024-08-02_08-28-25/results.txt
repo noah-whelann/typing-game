@@ -1,0 +1,111 @@
+Date : 2024-08-02 08:28:25
+Directory : /Users/noah/Documents/GitHub/typing-game/my-app
+Total : 50 files,  7305 codes, 79 comments, 212 blanks, all 7596 lines
+
+Languages
++--------------------+------------+------------+------------+------------+------------+
+| language           | files      | code       | comment    | blank      | total      |
++--------------------+------------+------------+------------+------------+------------+
+| JSON               |          2 |      5,664 |          0 |          2 |      5,666 |
+| TypeScript JSX     |         19 |        769 |         50 |         99 |        918 |
+| CSS                |         10 |        491 |          5 |         21 |        517 |
+| TypeScript         |          9 |        270 |         13 |         56 |        339 |
+| JSON with Comments |          2 |         30 |          0 |          2 |         32 |
+| Prisma             |          1 |         25 |          2 |          5 |         32 |
+| Markdown           |          1 |         23 |          0 |         14 |         37 |
+| SQL                |          1 |         19 |          4 |          6 |         29 |
+| JavaScript         |          2 |         10 |          1 |          3 |         14 |
+| Properties         |          1 |          2 |          4 |          4 |         10 |
+| XML                |          2 |          2 |          0 |          0 |          2 |
++--------------------+------------+------------+------------+------------+------------+
+
+Directories
++-----------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                | files      | code       | comment    | blank      | total      |
++-----------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                   |         50 |      7,305 |         79 |        212 |      7,596 |
+| . (Files)                                                                                           |          9 |      5,757 |          5 |         27 |      5,789 |
+| app                                                                                                 |         36 |      1,489 |         67 |        171 |      1,727 |
+| app (Files)                                                                                         |          4 |        159 |          0 |         15 |        174 |
+| app/actions                                                                                         |          3 |         78 |          4 |         23 |        105 |
+| app/actions (Files)                                                                                 |          1 |         13 |          2 |          4 |         19 |
+| app/actions/createGame                                                                              |          1 |         43 |          2 |         11 |         56 |
+| app/actions/users                                                                                   |          1 |         22 |          0 |          8 |         30 |
+| app/api                                                                                             |          2 |        141 |          8 |         22 |        171 |
+| app/api/auth                                                                                        |          1 |         98 |          0 |         12 |        110 |
+| app/api/auth/[...nextauth]                                                                          |          1 |         98 |          0 |         12 |        110 |
+| app/api/game                                                                                        |          1 |         43 |          8 |         10 |         61 |
+| app/auth                                                                                            |          3 |         30 |          0 |          8 |         38 |
+| app/auth/signin                                                                                     |          1 |         10 |          0 |          3 |         13 |
+| app/auth/signout                                                                                    |          1 |         10 |          0 |          3 |         13 |
+| app/auth/signup                                                                                     |          1 |         10 |          0 |          2 |         12 |
+| app/components                                                                                      |         18 |        985 |         55 |         84 |      1,124 |
+| app/components (Files)                                                                              |          7 |        321 |          4 |         32 |        357 |
+| app/components/ui                                                                                   |         11 |        664 |         51 |         52 |        767 |
+| app/dashboard                                                                                       |          2 |         48 |          0 |          6 |         54 |
+| app/lib                                                                                             |          2 |         10 |          0 |          6 |         16 |
+| app/stats                                                                                           |          1 |         29 |          0 |          5 |         34 |
+| app/user_settings                                                                                   |          1 |          9 |          0 |          2 |         11 |
+| prisma                                                                                              |          3 |         57 |          7 |         14 |         78 |
+| prisma (Files)                                                                                      |          2 |         38 |          3 |          8 |         49 |
+| prisma/migrations                                                                                   |          1 |         19 |          4 |          6 |         29 |
+| prisma/migrations/20231117060405_init                                                               |          1 |         19 |          4 |          6 |         29 |
+| public                                                                                              |          2 |          2 |          0 |          0 |          2 |
++-----------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++-----------------------------------------------------------------------------------------------------+--------------------+------------+------------+------------+------------+
+| filename                                                                                            | language           | code       | comment    | blank      | total      |
++-----------------------------------------------------------------------------------------------------+--------------------+------------+------------+------------+------------+
+| /Users/noah/Documents/GitHub/typing-game/my-app/.env                                                | Properties         |          2 |          4 |          4 |         10 |
+| /Users/noah/Documents/GitHub/typing-game/my-app/.eslintrc.json                                      | JSON with Comments |          3 |          0 |          1 |          4 |
+| /Users/noah/Documents/GitHub/typing-game/my-app/README.md                                           | Markdown           |         23 |          0 |         14 |         37 |
+| /Users/noah/Documents/GitHub/typing-game/my-app/app/actions/createGame/createGame.ts                | TypeScript         |         43 |          2 |         11 |         56 |
+| /Users/noah/Documents/GitHub/typing-game/my-app/app/actions/useSignOut.ts                           | TypeScript         |         13 |          2 |          4 |         19 |
+| /Users/noah/Documents/GitHub/typing-game/my-app/app/actions/users/signUp.ts                         | TypeScript         |         22 |          0 |          8 |         30 |
+| /Users/noah/Documents/GitHub/typing-game/my-app/app/api/auth/[...nextauth]/route.ts                 | TypeScript         |         98 |          0 |         12 |        110 |
+| /Users/noah/Documents/GitHub/typing-game/my-app/app/api/game/route.ts                               | TypeScript         |         43 |          8 |         10 |         61 |
+| /Users/noah/Documents/GitHub/typing-game/my-app/app/auth/signin/page.tsx                            | TypeScript JSX     |         10 |          0 |          3 |         13 |
+| /Users/noah/Documents/GitHub/typing-game/my-app/app/auth/signout/page.tsx                           | TypeScript JSX     |         10 |          0 |          3 |         13 |
+| /Users/noah/Documents/GitHub/typing-game/my-app/app/auth/signup/page.tsx                            | TypeScript JSX     |         10 |          0 |          2 |         12 |
+| /Users/noah/Documents/GitHub/typing-game/my-app/app/components/LineChart.tsx                        | TypeScript JSX     |         61 |          1 |          7 |         69 |
+| /Users/noah/Documents/GitHub/typing-game/my-app/app/components/Provider.tsx                         | TypeScript JSX     |         11 |          0 |          4 |         15 |
+| /Users/noah/Documents/GitHub/typing-game/my-app/app/components/SignInForm.tsx                       | TypeScript JSX     |         74 |          0 |          8 |         82 |
+| /Users/noah/Documents/GitHub/typing-game/my-app/app/components/SignOut.tsx                          | TypeScript JSX     |         30 |          3 |          6 |         39 |
+| /Users/noah/Documents/GitHub/typing-game/my-app/app/components/SignUpForm.tsx                       | TypeScript JSX     |         43 |          0 |          7 |         50 |
+| /Users/noah/Documents/GitHub/typing-game/my-app/app/components/signin.css                           | CSS                |         51 |          0 |          0 |         51 |
+| /Users/noah/Documents/GitHub/typing-game/my-app/app/components/signup.css                           | CSS                |         51 |          0 |          0 |         51 |
+| /Users/noah/Documents/GitHub/typing-game/my-app/app/components/ui/Data.css                          | CSS                |         52 |          1 |          4 |         57 |
+| /Users/noah/Documents/GitHub/typing-game/my-app/app/components/ui/Footer.css                        | CSS                |         38 |          1 |          1 |         40 |
+| /Users/noah/Documents/GitHub/typing-game/my-app/app/components/ui/Footer.tsx                        | TypeScript JSX     |         35 |          0 |          2 |         37 |
+| /Users/noah/Documents/GitHub/typing-game/my-app/app/components/ui/GameBar.css                       | CSS                |         71 |          1 |          3 |         75 |
+| /Users/noah/Documents/GitHub/typing-game/my-app/app/components/ui/GameBar.tsx                       | TypeScript JSX     |        100 |          0 |          6 |        106 |
+| /Users/noah/Documents/GitHub/typing-game/my-app/app/components/ui/Header.css                        | CSS                |         39 |          1 |          3 |         43 |
+| /Users/noah/Documents/GitHub/typing-game/my-app/app/components/ui/Header.tsx                        | TypeScript JSX     |         47 |          0 |          3 |         50 |
+| /Users/noah/Documents/GitHub/typing-game/my-app/app/components/ui/MainText.css                      | CSS                |         52 |          1 |          2 |         55 |
+| /Users/noah/Documents/GitHub/typing-game/my-app/app/components/ui/MainText.tsx                      | TypeScript JSX     |        205 |         17 |         18 |        240 |
+| /Users/noah/Documents/GitHub/typing-game/my-app/app/components/ui/WordsInput.tsx                    | TypeScript JSX     |         16 |         29 |          5 |         50 |
+| /Users/noah/Documents/GitHub/typing-game/my-app/app/components/ui/name.tsx                          | TypeScript JSX     |          9 |          0 |          5 |         14 |
+| /Users/noah/Documents/GitHub/typing-game/my-app/app/dashboard/dashboard.css                         | CSS                |         26 |          0 |          1 |         27 |
+| /Users/noah/Documents/GitHub/typing-game/my-app/app/dashboard/page.tsx                              | TypeScript JSX     |         22 |          0 |          5 |         27 |
+| /Users/noah/Documents/GitHub/typing-game/my-app/app/front-page.css                                  | CSS                |        102 |          0 |          6 |        108 |
+| /Users/noah/Documents/GitHub/typing-game/my-app/app/globals.css                                     | CSS                |          9 |          0 |          1 |         10 |
+| /Users/noah/Documents/GitHub/typing-game/my-app/app/layout.tsx                                      | TypeScript JSX     |         23 |          0 |          6 |         29 |
+| /Users/noah/Documents/GitHub/typing-game/my-app/app/lib/db.ts                                       | TypeScript         |          7 |          0 |          4 |         11 |
+| /Users/noah/Documents/GitHub/typing-game/my-app/app/lib/prisma.ts                                   | TypeScript         |          3 |          0 |          2 |          5 |
+| /Users/noah/Documents/GitHub/typing-game/my-app/app/page.tsx                                        | TypeScript JSX     |         25 |          0 |          2 |         27 |
+| /Users/noah/Documents/GitHub/typing-game/my-app/app/stats/page.tsx                                  | TypeScript JSX     |         29 |          0 |          5 |         34 |
+| /Users/noah/Documents/GitHub/typing-game/my-app/app/user_settings/page.tsx                          | TypeScript JSX     |          9 |          0 |          2 |         11 |
+| /Users/noah/Documents/GitHub/typing-game/my-app/next.config.js                                      | JavaScript         |          4 |          1 |          2 |          7 |
+| /Users/noah/Documents/GitHub/typing-game/my-app/package-lock.json                                   | JSON               |      5,617 |          0 |          1 |      5,618 |
+| /Users/noah/Documents/GitHub/typing-game/my-app/package.json                                        | JSON               |         47 |          0 |          1 |         48 |
+| /Users/noah/Documents/GitHub/typing-game/my-app/postcss.config.js                                   | JavaScript         |          6 |          0 |          1 |          7 |
+| /Users/noah/Documents/GitHub/typing-game/my-app/prisma/index.ts                                     | TypeScript         |         13 |          1 |          3 |         17 |
+| /Users/noah/Documents/GitHub/typing-game/my-app/prisma/migrations/20231117060405_init/migration.sql | SQL                |         19 |          4 |          6 |         29 |
+| /Users/noah/Documents/GitHub/typing-game/my-app/prisma/schema.prisma                                | Prisma             |         25 |          2 |          5 |         32 |
+| /Users/noah/Documents/GitHub/typing-game/my-app/public/next.svg                                     | XML                |          1 |          0 |          0 |          1 |
+| /Users/noah/Documents/GitHub/typing-game/my-app/public/vercel.svg                                   | XML                |          1 |          0 |          0 |          1 |
+| /Users/noah/Documents/GitHub/typing-game/my-app/tailwind.config.ts                                  | TypeScript         |         28 |          0 |          2 |         30 |
+| /Users/noah/Documents/GitHub/typing-game/my-app/tsconfig.json                                       | JSON with Comments |         27 |          0 |          1 |         28 |
+| Total                                                                                               |                    |      7,305 |         79 |        212 |      7,596 |
++-----------------------------------------------------------------------------------------------------+--------------------+------------+------------+------------+------------+

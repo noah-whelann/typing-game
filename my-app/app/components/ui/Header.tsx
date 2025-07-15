@@ -6,7 +6,6 @@ import darklogo from "@/app/assets/dark-logo.png"
 import { PersonRounded } from '@mui/icons-material';
 import Link from "next/link";
 import { getServerSession } from "next-auth";
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { useTheme } from 'next-themes';
 import "./Header.css";
 

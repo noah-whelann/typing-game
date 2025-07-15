@@ -1,17 +1,16 @@
 import React from "react";
 import Image from "next/image";
-import logo from "@/app/assets/logo.png"
+import logo from "@/app/assets/logo.png";
 import { CgProfile } from "react-icons/cg";
 import Link from "next/link";
 import { getServerSession } from "next-auth";
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import { authOptions } from "@/app/lib/auth";
 
 const WordsInput = async () => {
+  const session = await getServerSession(authOptions);
 
-    const session = await getServerSession(authOptions);
-  
-    return (
-        /*
+  return (
+    /*
       <div className="flex justify-between items-center max-w-screen">
         <div className="w-20 m-10">
           <Image src={logo} alt="logo" />
@@ -40,11 +39,8 @@ const WordsInput = async () => {
           </div>
         </div>
       </div>*/
-      <div>
-        Words Input
-      </div>
-    );
-  };
-  
-  export default WordsInput;
-  
+    <div>Words Input</div>
+  );
+};
+
+export default WordsInput;
