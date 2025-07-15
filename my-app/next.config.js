@@ -1,6 +1,17 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    reactStrictMode: false
+  experimental: {
+    serverActions: true,
+  },
+  async redirects() {
+    return [
+      {
+        source: "/api/auth/[...nextauth]",
+        destination: "/",
+        permanent: false,
+      },
+    ];
+  },
 };
 
-module.exports = nextConfig
+module.exports = nextConfig;
