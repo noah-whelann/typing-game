@@ -18,7 +18,7 @@ const SignInForm = () => {
   const handleSubmit = async (event: React.MouseEvent<HTMLButtonElement>) => {
     event.preventDefault(); // Prevent default form submission
     setMessage("Signing in...");
-
+    
     try {
       const signInResponse = await signIn("credentials", {
         email,
@@ -33,6 +33,7 @@ const SignInForm = () => {
         console.log("successful");
         router.push("/dashboard");
       }
+
     } catch (err) {
       console.error(err);
       setMessage("Sign in failed");
