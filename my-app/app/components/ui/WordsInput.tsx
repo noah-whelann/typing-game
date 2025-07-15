@@ -5,6 +5,7 @@ import { CgProfile } from "react-icons/cg";
 import Link from "next/link";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/app/lib/auth";
+export const dynamic = "force-dynamic";
 
 const WordsInput = async () => {
   const session = await getServerSession(authOptions);

@@ -8,6 +8,7 @@ import Link from "next/link";
 import { getServerSession } from "next-auth";
 import { useTheme } from 'next-themes';
 import "./Header.css";
+export const dynamic = "force-dynamic"
 
 const Header = () => {
   const {theme, setTheme} = useTheme();
