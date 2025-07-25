@@ -129,10 +129,9 @@ const MainText = () => {
 
     const wordCount = cookies.get("wordCount") || "10";
     const diff = cookies.get("diff") || "easy";
+    const apiUrl = `https://random-word-api.vercel.app/api?words=${wordCount}`;
 
-    fetch(
-      `https://random-word.ryanrk.com/api/en/word/random/${wordCount}?${diff}`
-    )
+    fetch(apiUrl)
       .then((response) => response.json())
       .then((data) => {
         setWordsList(data);
@@ -224,7 +223,7 @@ const MainText = () => {
             <div className="words-typed">
               <p id="words-typed-number">{wordIndex}</p>
               <p id="words-typed-text">words typed</p>
-            </div>  
+            </div>
             <div className="timer">
               <p id="timer-number">{timer}s</p>
               <p id="timer-text">time elapsed</p>
